@@ -6,11 +6,17 @@ import Home from "./components/home";
 class App extends React.Component {
   render() {
     return(
-      <div>
+      <div className="App">
+        <h1 className="App-header">
+        Welcome to the "Would you rather game!
+        </h1>
         <Login/>
+        <br></br>
+        <br></br>
+        <br></br>
+
         <Home/>
-        
-        </div>
+    </div>
       )
     };
 }
