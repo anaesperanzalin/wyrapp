@@ -1,5 +1,6 @@
 import React from 'react'
 import { Tab } from 'semantic-ui-react'
+import UserCard from "../components/UserCard"
 
 const panes = [
   { menuItem: 'Answered', render: () => 
@@ -15,7 +16,7 @@ const panes = [
 
   </Tab.Pane> },
   { menuItem: 'Unanswered', render: () => <Tab.Pane>
-    Here we go with the Unanswered questions
+    <UserCard></UserCard>
     <br></br>
     woohoooo
     <br></br>

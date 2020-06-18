@@ -8,7 +8,9 @@ class NavMenu extends React.Component{
 
                 <a className="item">Home   </a>
                 <a className="item">Leaderboard   </a>
+                <a className="item">Create new poll   </a>
                 <div className="right menu"> 
+                     <a className="item" >Hi //username>    </a>
                     <a className="item" >Logout    </a>
                 
                 </div>

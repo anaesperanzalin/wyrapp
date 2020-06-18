@@ -8,7 +8,7 @@ class App extends React.Component {
     return(
       <div className="App">
         <h1 className="App-header">
-        Welcome to the "Would you rather game!
+        Welcome to the "Would you rather game"!
         </h1>
         <Login/>
         <br></br>

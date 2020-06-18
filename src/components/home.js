@@ -1,6 +1,5 @@
 import React from "react";
 import QuestionTab from "../components/QuestionTab";
-import {container} from "semantic-ui-react"
 import NavMenu from "../components/NavMenu"
 
 
