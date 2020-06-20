@@ -99,7 +99,7 @@
   margin-right: 5cm;
  }
 
-.login-btn{
+.btn{
   background-color: lightseagreen;
   color: white;
   padding: 30px;
@@ -107,6 +107,7 @@
   border: none; 
   
 }
+
 
 @keyframes App-logo-spin {
   from {

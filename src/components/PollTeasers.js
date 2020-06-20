@@ -1,13 +1,14 @@
 import React from 'react'
 import { Tab } from 'semantic-ui-react'
-import UserCard from "../components/UserCard"
+import UserCard from "./UserCard"
+
 
 const panes = [
-  { menuItem: 'Answered', render: () => 
+  { menuItem: 'Unanswered', render: () => 
   
   <Tab.Pane>Here we go with the Answered questions 
     <br></br>
-    woohoooo
+    <UserCard></UserCard>
     <br></br>
     <br></br>
     <br></br>
@@ -15,8 +16,8 @@ const panes = [
 
 
   </Tab.Pane> },
-  { menuItem: 'Unanswered', render: () => <Tab.Pane>
-    <UserCard></UserCard>
+  { menuItem: 'Answered', render: () => <Tab.Pane>
+    
     <br></br>
     woohoooo
     <br></br>
@@ -29,7 +30,7 @@ const panes = [
   
 ]
 
-const QuestionTab = () => <Tab panes={panes} 
+const PollTeasers = () => <Tab panes={panes} 
 className= "tab"/>
 
-export default QuestionTab;
+export default PollTeasers;

@@ -16,6 +16,11 @@ import {
 class Login extends React.Component{
 
     render(){
+
+        const LoginImage = () => (
+            <Image src="/images/avatars/animals.png" size="medium" centered />
+          );
+
     return(
     <div className="dropdown">
         <h1 className="Login-header">This is the login component hahaa</h1>
@@ -41,7 +46,7 @@ class Login extends React.Component{
             <br></br>
             <br></br>
             <br></br>
-            <button className="login-btn">Login</button>
+            <button className="btn">Login</button>
             </div>
    </div>
     );

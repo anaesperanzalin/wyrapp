@@ -1,7 +1,9 @@
 import React from "react";
-import QuestionTab from "../components/QuestionTab";
+import PollTeasers from "../components/PollTeasers";
 import NavMenu from "../components/NavMenu"
-
+import PollQuestions from "../components/PollQuestions"
+import NewPoll from "../components/NewPoll"
+import Leaderboard from "../components/Leaderboard";
 
 class Home extends React.Component {
   render() {
@@ -11,7 +13,17 @@ class Home extends React.Component {
         <h1>This is Homepage</h1>
         <NavMenu/>
 
-        <QuestionTab className="ui container"/>
+        <PollTeasers className="ui container"/>
+
+
+        <PollQuestions className="ui container"/>
+
+        <NewPoll/>
+        <br></br>
+        <br></br><br></br>
+        <br></br>
+        <Leaderboard/>
+        
     </div>
     )
   }
