@@ -1,32 +1,80 @@
 import React from "react";
-import PollTeasers from "../components/PollTeasers";
+import PollTeaser from "./PollTeaser";
 import NavMenu from "../components/NavMenu"
 import PollQuestions from "../components/PollQuestions"
 import NewPoll from "../components/NewPoll"
 import Leaderboard from "../components/Leaderboard";
+import PollResult from "./PollResult";
+import Error from "./Error"
+import {connect} from 'react-redux'
+import Question from './Question';
 
 class Home extends React.Component {
   render() {
+      console.log(this.props)
     return(
       
     <div className="container">
         <h1>This is Homepage</h1>
         <NavMenu/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        
+        <PollTeaser className="ui container"/>
+        <br/>
 
-        <PollTeasers className="ui container"/>
+        <h3>Here comes the question </h3>
+        <ul>
+        {this.props.qids.map((id)=>(
+          <li key={id}>
+            <Question id={id}/>
 
+          </li>
+
+        ))}
+
+        </ul>
+        <br/>
+        <br/>
+        <br/>
+        
 
         <PollQuestions className="ui container"/>
-
-        <NewPoll/>
-        <br></br>
-        <br></br><br></br>
-        <br></br>
-        <Leaderboard/>
+        <br/>
         
+        <NewPoll/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+
+
+        <PollResult/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        
+        <Error/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+
     </div>
     )
   }
 }
 
-export default Home;
+function mapStateToProps({questions}){
+  return{
+    qids:Object.keys(questions)
+      .sort((a,b)=>questions[b.timestamp-questions[a].timestamp])
+  }
+}
+
+export default connect(mapStateToProps)(Home)
+
+

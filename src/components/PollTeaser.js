@@ -30,7 +30,7 @@ const panes = [
   
 ]
 
-const PollTeasers = () => <Tab panes={panes} 
+const PollTeaser = () => <Tab panes={panes} 
 className= "tab"/>
 
-export default PollTeasers;
+export default PollTeaser;

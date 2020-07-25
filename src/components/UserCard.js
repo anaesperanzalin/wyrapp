@@ -1,7 +1,23 @@
 import React from "react";
 import {Segment, Header, Grid, Image} from "semantic-ui-react";
+import PropTypes from "prop-types";
+import PollTeaser from "./PollTeaser"
+import PollQuestion from "./PollQuestions";
+import PollResult from "./PollResult";
+import {connect} from "react-redux";
+import {fetchPosts} from "../Actions/index";
+
+
 import pig from "../components/images/avatars/pig.png"
 import monkey from "../components/images/avatars/monkey.png"
+
+const pollTypes ={
+  POLL_TEASER:'POLL_TEASER',
+  POLL_QUESTION:'POLL_QUESTION',
+  POLL_RESULT: 'POLL_RESULT'
+};
+
+
 class UserCard extends React.Component{
   render(){
     return(
@@ -59,4 +75,4 @@ class UserCard extends React.Component{
   }
 }
 
-export default UserCard
+export default connect(null, {fetchPosts}) (UserCard);

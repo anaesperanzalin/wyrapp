@@ -6,26 +6,26 @@ import {
   Image,
   Label,
   Divider,
+  
 } from "semantic-ui-react";
 
 class Leaderboard extends Component {
 
   render() {
 
-    const PiggyImage = () => (
-        <Image src="/images/avatars/pig.png" size="medium" centered />
-      );
+    
 
     return (
       <div>
         <h2>This is the leaderboard component </h2>
+        <div className="tab">
         <Fragment>
           <Segment.Group>
             <Label corner="left" icon="star" color="yellow" />
             <Grid divided padded>
               <Grid.Row>
                 <Grid.Column width={4} verticalAlign="middle">
-                  <Image src="../src/components/images/avatars/pig.png"/>
+                  <Image src= "../components/images/avatar/pig.png"/>
                 </Grid.Column>
                 <Grid.Column width={8}>
                   <Header as="h3" textAlign="left">
@@ -59,6 +59,7 @@ class Leaderboard extends Component {
             </Grid>
           </Segment.Group>
         </Fragment>
+      </div>
       </div>
     );
   }

@@ -1,9 +1,15 @@
 import React from 'react';
-import './App.css';
-import Login from "./components/login";
-import Home from "./components/home";
+import Login from "./login";
+import Home from "./home";
+import {connect} from 'react-redux';
+import {handleInitialData} from '../Actions/shared'
 
 class App extends React.Component {
+  componentDidMount(){
+    this.props.dispatch(handleInitialData())
+  }
+
+
   render() {
     return(
       <div className="App">
@@ -19,6 +25,6 @@ class App extends React.Component {
     </div>
       )
     };
-}
+};
 
-export default App;
+export default connect() (App)
