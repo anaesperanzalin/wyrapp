@@ -1,30 +1,62 @@
-import React from 'react';
+import React, { Fragment } from "react";
 import Login from "./login";
 import Home from "./home";
-import {connect} from 'react-redux';
-import {handleInitialData} from '../Actions/shared'
+import { connect } from "react-redux";
+import { handleInitialData } from "../Actions/shared";
+import {
+  BrowserRouter as Router,
+  Route,
+  BrowserRouter,
+} from "react-router-dom";
+import { Grid } from "semantic-ui-react";
+import NavMenu from "./NavMenu";
 
 class App extends React.Component {
-  componentDidMount(){
-    this.props.dispatch(handleInitialData())
+  componentDidMount() {
+    this.props.dispatch(handleInitialData());
   }
 
-
   render() {
-    return(
-      <div className="App">
-        <h1 className="App-header">
-        Welcome to the "Would you rather game"!
-        </h1>
-        <Login/>
-        <br></br>
-        <br></br>
-        <br></br>
+    const { authedUser } = this.props;
 
-        <Home/>
-    </div>
-      )
-    };
-};
+    return (
+      <Router>
+        <div className="App">
+        {authedUser === null ?(
+          <Route 
+            render = {()=> (
+              <ContentGrid>
+                <Login/>
+              </ContentGrid>
+            )}/>
+        ):(
+          <ContentGrid>
+            <Route exact path="/home"
+            component={Home}/>
+              </ContentGrid>)
+        }
 
-export default connect() (App)
+        </div>
+      </Router>
+    );
+  }
+}
+
+const ContentGrid = ({ children }) => (
+  <Grid padded="vertically" columns={2} centered>
+    <Grid.Row>
+      <Grid.Column style={{ maxWidth: 600 }}>{children}</Grid.Column>
+    </Grid.Row>
+  </Grid>
+);
+
+function mapStateToProps({authedUser}){
+  return{
+    authedUser
+  };
+}
+
+export default connect(
+  mapStateToProps,
+ 
+)(App);

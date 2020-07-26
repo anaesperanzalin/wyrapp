@@ -1,56 +1,64 @@
 import React from "react";
 import animals from "../components/images/avatars/animals.png";
-import SelectAnimal from "../components/SelectAnimal";
+import { setAuthedUser } from "../Actions/authedUser";
 
 import {
-    Segment,
-    Grid,
-    Header,
-    Image,
-    Form,
-    Loader,
-    Dimmer,
-    Select
-  } from 'semantic-ui-react';
+  Segment,
+  Grid,
+  Header,
+  Image,
+  Form,
+  Loader,
+  Dimmer,
+  Select,
+} from "semantic-ui-react";
 
-class Login extends React.Component{
+class Login extends React.Component {
+  state = {
+    loading: false,
+  };
+  handleLoading = () => {
+    this.setState({ loading: true });
+  };
 
-    render(){
+  render() {
+    return (
+      <div className="dropdown">
+        <h1 className="Login-header">Welcome to the Would You Rather App</h1>
+        <p> Please sign in below </p>
+        <img src={animals} alt="text" />
+        <a href="https://www.freepik.com/free-photos-vectors/icon">
+          Pics from freepik.com
+        </a>
+        <br/>
+        <br/>
+        <LoginForm/>
+      </div>
+    );
+  };
+}
 
-        const LoginImage = () => (
-            <Image src="/images/avatars/animals.png" size="medium" centered />
-          );
+class LoginForm extends React.Component{
+    
+
+  render(){
 
     return(
-    <div className="dropdown">
-        <h1 className="Login-header">This is the login component hahaa</h1>
-        <p> Please sign in below </p>
-        <img src= {animals} alt="text"/>
-        <a href="https://www.freepik.com/free-photos-vectors/icon"></a>
-       
-    
-        <div className=".dropdown-content ">
-        <form>
-        <select>
-            
-            <option value="">Choose Your Player</option>
-            <option value="1">Dog</option>
-            <option value="0">Panda</option>
-            <option value="0">Monkey</option>
-            <option value="0">Ox</option>
-            <option value="0">Elephant</option>
-            <option value="0">Pig</option>
-            </select>
+    <Form>
+     <Form.Dropdown
+     placeholder="select a player"
+     selection
+     scrolling
 
-            </form>   
-            <br></br>
-            <br></br>
-            <br></br>
-            <button className="btn">Login</button>
-            </div>
-   </div>
-    );
-};
-};
+     />
+      <button>Sign in</button>
+        </Form>
 
-export default Login
+      )
+    }
+  }
+
+
+
+
+export default Login;

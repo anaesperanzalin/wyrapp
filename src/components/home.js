@@ -25,17 +25,14 @@ class Home extends React.Component {
         <PollTeaser className="ui container"/>
         <br/>
 
-        <h3>Here comes the question </h3>
-        <ul>
+        <h3>Here we go! </h3>
+        
         {this.props.qids.map((id)=>(
-          <li key={id}>
+          <ul key={id}>
             <Question id={id}/>
-
-          </li>
-
+          </ul>
         ))}
 
-        </ul>
         <br/>
         <br/>
         <br/>

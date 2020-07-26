@@ -24,7 +24,10 @@ class PollQuestions extends React.Component {
                 <br />
                 <br />
                 <br />
-                <Radio label="option 2" name="radioGroup" value="optionTwo" />
+                <Radio 
+                label="option 2" 
+                name="radioGroup" 
+                value="optionTwo" />
               </Form.Field>
             </Form>
             <br />
