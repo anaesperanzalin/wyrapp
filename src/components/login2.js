@@ -10,7 +10,7 @@ import {
   Loader,
   Dimmer
 } from 'semantic-ui-react';
-import { setAuthUser } from '../actions/authUser';
+import { setAuthedUser } from '../Actions/authedUser';
 
 export class Login extends Component {
   state = {
@@ -100,6 +100,7 @@ class LoginForm extends Component {
       value: user.id,
       image: { avatar: true, src: user.avatarURL }
     }));
+
   };
   render() {
     const { value } = this.state;

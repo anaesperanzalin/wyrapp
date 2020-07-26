@@ -35,7 +35,7 @@ class App extends React.Component {
             component={Home}/>
               </ContentGrid>)
         }
-
+      <Home/>
         </div>
       </Router>
     );
